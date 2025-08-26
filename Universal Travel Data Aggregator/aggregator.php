@@ -6,7 +6,7 @@ use GuzzleHttp\Exception\RequestException;
 
 // Create a HTTP client
 $client = new Client([
-    'timeout' => 30, // seconds
+    'timeout' => 10, 
 ]);
 
 // API Endpoints
@@ -25,13 +25,13 @@ function normalizeTravelGuides(array $data): array {
         $normalized[] = [
             'id' => $item['id'] ?? null,
             'name' => $item['name'] ?? 'Unknown',
-            'type' => 'User', // API A are users
-            'status' => 'Active', // assume all users are active
-            'gender' => 'N/A', // not available
+            'type' => 'User',
+            'status' => 'Active',
+            'gender' => 'N/A',
             'location' => $item['address']['city'] ?? 'N/A',
             'contact' => $item['email'] ?? 'N/A',
             'company' => $item['company']['name'] ?? 'N/A',
-            'image' => 'https://via.placeholder.com/150', // placeholder image
+            'image' => 'https://via.placeholder.com/150',
             'url' => 'https://jsonplaceholder.typicode.com/users/' . ($item['id'] ?? ''),
             'origin' => 'Travel Guides',
         ];
