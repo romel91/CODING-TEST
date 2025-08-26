@@ -9,7 +9,6 @@ require '../db.php';
 
 $result = $conn->query("SELECT * FROM users");
 
-ob_start();
 ?>
 <div class="bg-white p-8 rounded shadow-md w-full max-w-4xl">
     <h2 class="text-2xl font-bold mb-6 text-center">All Users</h2>
@@ -38,6 +37,5 @@ ob_start();
     </table>
 </div>
 <?php
-$content = ob_get_clean();
 $title = "All Users";
 require 'layout.php';

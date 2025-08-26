@@ -37,7 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-ob_start();
 ?>
 <div class="bg-white p-8 rounded shadow-md w-96">
     <h2 class="text-2xl font-bold mb-6 text-center">Edit User</h2>
@@ -51,6 +50,5 @@ ob_start();
     </form>
 </div>
 <?php
-$content = ob_get_clean();
 $title = "Edit User";
 require 'layout.php';
