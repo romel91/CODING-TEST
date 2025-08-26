@@ -5,6 +5,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+ob_start();
 ?>
 <div class="bg-white p-8 rounded shadow-md w-full max-w-3xl text-center">
     <h2 class="text-2xl font-bold mb-6">Welcome, <?= $_SESSION['user_name'] ?>!</h2>
@@ -21,5 +22,6 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 </div>
 <?php
+$content = ob_get_clean();
 $title = "Dashboard";
 require 'layout.php';
